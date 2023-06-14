@@ -76,5 +76,5 @@
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {}
   },
-  "postStartCommand": "bash -i -c 'npm start'"
+  "postStartCommand": ""
 }
