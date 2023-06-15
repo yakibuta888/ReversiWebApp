@@ -18,12 +18,14 @@ WORKDIR ${WORKDIR}
 # Installing packages
 COPY package.json .
 RUN npm install \
-	express@4.18.1;\
+	express@4.18.1 \
+	morgan@1.10.0;\
 	npm install --save-dev \
 	typescript@4.8.3 \
 	ts-node@10.9.1 \
 	@types/express@4.17.14 \
-	nodemon@2.0.20
+	nodemon@2.0.20 \
+	@types/morgan@1.9.3
 
 # Create the user
 ARG USERNAME
