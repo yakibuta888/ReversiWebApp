@@ -17,10 +17,24 @@ services:
     tty: true
     env_file:
       - ./.env
+      - ./backend/backend.env
     volumes:
       - logs:$WORK_DIR/logs
       - ./backend:$WORK_DIR:ro
       - $WORK_DIR/node_modules
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:8.0.29
+    platform: linux/x86_64
+    ports:
+      - $IP:3306:3306
+    env_file:
+      - ./mysql/mysql.env
+    volumes:
+      - db-store:/var/lib/mysql
+      - ./mysql/logs:/var/log/mysql
 
 volumes:
   logs:
+  db-store:
