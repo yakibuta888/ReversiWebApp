@@ -20,7 +20,8 @@ COPY package.json .
 RUN npm install \
 	express@4.18.1 \
 	morgan@1.10.0 \
-	express-async-errors@3.1.1;\
+	express-async-errors@3.1.1 \
+	mysql2@2.3.3;\
 	npm install --save-dev \
 	typescript@4.8.3 \
 	ts-node@10.9.1 \
